@@ -1,0 +1,19 @@
+name: JFrog Build
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup JFrog CLI
+        uses: jfrog/setup-jfrog-cli@v4
+        env:
+          # This connects the CLI to your specific instance
+          JF_URL: https://yourname.jfrog.io/
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+
+      - name: Ping JFrog
+        run: jf rt ping
