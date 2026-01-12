@@ -12,7 +12,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         env:
           # This connects the CLI to your specific instance
-          JF_URL: https://yourname.jfrog.io/
+          JF_URL: https://trialn0yguu.jfrog.io/
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
       - name: Ping JFrog
